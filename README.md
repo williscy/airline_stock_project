@@ -3,7 +3,7 @@
  
 ![Dashboard Preview](dashboard/airline_stock_dashboard.png)
  
-> **An data analytics project** analysing the stock performance of 4 major Asia-Pacific airlines — Cathay Pacific, Singapore Airlines, Qantas, and Korean Air — across 11 years (2015–2025), covering pre-COVID growth, pandemic collapse, and the ongoing recovery.
+> **A data analytics project** analysing the stock performance of 4 major Asia-Pacific airlines — Cathay Pacific, Singapore Airlines, Qantas, and Korean Air — across 11 years (2015–2025), covering pre-COVID growth, pandemic collapse, and the ongoing recovery.
 
 [![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
@@ -12,7 +12,7 @@
  
 ---
 
-📌 Project Summary
+## 📌 Project Summary
  
 | | |
 |---|---|
@@ -29,9 +29,11 @@
 This project extends my [Cathay Pacific Operations Analysis](https://github.com/williscy/CX_project) by adding a financial market perspective — analysing how investor sentiment and stock prices reflected the operational reality of Asia-Pacific airlines through one of the most turbulent periods in aviation history.
  
 Rather than using a pre-cleaned dataset, I built the pipeline from scratch: fetching raw stock data from Yahoo Finance using the yfinance API, cleaning and transforming it with pandas, loading it into PostgreSQL, writing SQL queries to extract insights, and visualising the findings in an interactive Tableau dashboard.
+
+📝 **Learning note:** This project was built for the purpose of learning and practising data analytics skills — specifically **pandas**, **matplotlib**, **seaborn**, **SQL** (window functions, CTEs, JOINs), **PostgreSQL**, and **Tableau**. The analysis and insights are real, but the primary goal was hands-on skill development across the full data analytics stack.
  
 ---
-## Key Findings
+## 🔍 Key Findings
  
 - 📉**All 4 airlines crashed simultaneously in March 2020** — stock prices dropped 50–70% within weeks of the WHO pandemic declaration
 - 🇦🇺 **Qantas was the biggest winner long-term** — 5x growth from its 2015 baseline by 2025, driven by domestic Australia's early reopening and aggressive fleet restructuring
@@ -41,7 +43,7 @@ Rather than using a pre-cleaned dataset, I built the pipeline from scratch: fetc
 - 📅 **November is universally the best month** for all 4 airlines — consistent positive returns across the full 11-year period
 - ⚡ **COVID tripled volatility overnight** — Qantas peaked at 8.6% 30-day rolling volatility in March 2020 vs. its pre-COVID average of ~2%
 ---
-## Project Structure
+## 🗂️ Project Structure
  
 ```
 airline_stock_project/
@@ -64,11 +66,15 @@ airline_stock_project/
 │   ├── 3_recovery_speed.sql              # When each airline crossed back above baseline
 │   └── 4_best_worst_month.sql            # Best and worst month per airline
 └── dashboard/
-    └── airline_stock_dashboard.png
+    ├── airline_stock_dashboard.png   # Full Tableau dashboard screenshot
+    ├── 1_normalised_price.png        # Python: normalised stock price chart
+    ├── 2_rolling_volatility.png      # Python: 30-day rolling volatility chart
+    ├── 3_monthly_heatmap.png         # Python: monthly returns heatmap
+    └── 4_covid_drawdown.png          # Python: COVID drawdown & recovery chart
 ```
  
 ---
-## Data Pipeline
+## ⚙️ Data Pipeline
  
 ```
 Yahoo Finance API
@@ -92,7 +98,7 @@ Tableau Public Dashboard → 4-chart interactive dashboard
  
 ---
  
-## Dashboard
+## 📊 Dashboard
  
 **🔗 Live dashboard:** [Tableau Public — Asia-Pacific Airline Stock Analysis 2015–2025](https://public.tableau.com/views/Asia-PacificAirlineStockAnalysis2015-2025/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
  
@@ -103,4 +109,3 @@ Tableau Public Dashboard → 4-chart interactive dashboard
 | 3 | Monthly Return Heatmap | Heatmap | November universally best, seasonal patterns clearly visible |
 | 4 | COVID Drawdown & Recovery | Multi-line | All airlines crashed together, recovered at very different speeds |
  
----
